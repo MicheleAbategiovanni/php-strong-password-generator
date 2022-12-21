@@ -1,6 +1,6 @@
 <?php
 
-function randomChar($passwordLenght)
+function randomChar($passwordLength)
 {
 
     $chars = "abcdefghiklmnopqrstuvwxyz";
@@ -11,7 +11,7 @@ function randomChar($passwordLenght)
     $dictionary = $chars . $numbers . $charsUp . $symbol;
     $password = '';
 
-    for ($i = 0; $i < $passwordLenght; $i++) {
+    for ($i = 0; $i < $passwordLength; $i++) {
         $charIndex = rand(0, strlen($dictionary) - 1);
         $password = $password . $dictionary[$charIndex];
     }

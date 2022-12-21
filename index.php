@@ -1,8 +1,9 @@
 <?php
 
 include_once "functions.php";
+session_start();
 
-$passwordLenght = isset($_GET["length"]) ? $_GET["length"] : '';
+$passwordLength = isset($_GET["length"]) ? $_GET["length"] : '';
 
 
 ?>
@@ -41,7 +42,7 @@ $passwordLenght = isset($_GET["length"]) ? $_GET["length"] : '';
                 <form action="" method="get">
 
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Lunghezza</span>
+                        <span class="input-group-text" >Lunghezza</span>
                         <input type="text" class="form-control" placeholder="" name="length">
                         <button class="btn btn-danger">Invia</button>
                     </div>
@@ -55,7 +56,7 @@ $passwordLenght = isset($_GET["length"]) ? $_GET["length"] : '';
                         <?php if (isset($_GET['length'])) { ?>
                             <div class="alert alert-warning" role="alert">
                                 <h5 class="text-black">La password generata per te è:</h5>
-                                <p class="text-danger"> <?php echo randomChar($passwordLenght) ?> </p>
+                                <p class="text-danger"> <?php echo randomChar($passwordLength) ?> </p>
                             </div>
                         <?php } ?>
 
