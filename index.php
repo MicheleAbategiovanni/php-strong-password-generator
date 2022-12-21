@@ -4,6 +4,7 @@ include_once "functions.php";
 
 $passwordLenght = isset($_GET["length"]) ? $_GET["length"] : '';
 
+
 ?>
 
 
@@ -54,7 +55,7 @@ $passwordLenght = isset($_GET["length"]) ? $_GET["length"] : '';
                         <?php if (isset($_GET['length'])) { ?>
                             <div class="alert alert-warning" role="alert">
                                 <h5 class="text-black">La password generata per te è:</h5>
-                                <p class="text-danger"> <?php randomChar($passwordLenght) ?> </p>
+                                <p class="text-danger"> <?php echo randomChar($passwordLenght) ?> </p>
                             </div>
                         <?php } ?>
 

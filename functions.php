@@ -8,13 +8,14 @@ function randomChar($passwordLenght)
     $symbol = "!@#$%^&*()-_=+[]{};:',./\|";
     $numbers = "0123456789";
 
-    $password = $chars . $numbers . $charsUp . $symbol;
+    $dictionary = $chars . $numbers . $charsUp . $symbol;
+    $password = '';
 
     for ($i = 0; $i < $passwordLenght; $i++) {
-        $charIndex = rand(0, strlen($password) - 1);
-        echo $password[$charIndex];
+        $charIndex = rand(0, strlen($dictionary) - 1);
+        $password = $password . $dictionary[$charIndex];
     }
+
+    return $password;
+
 }
-
-
-?>
