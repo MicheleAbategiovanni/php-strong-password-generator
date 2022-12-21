@@ -1,24 +1,8 @@
 <?php
 
-$passwordLenght = isset($_GET["length"]) ? $_GET["length"] : 0;
-// $passwordLenght = 5;
-$pippo = "";
+include_once "functions.php";
 
-function randomChar($passwordLenght)
-{
-
-    $chars = "abcdefghiklmnopqrstuvwxyz";
-    $charsUp = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
-    $symbol = "!@#$%^&*()-_=+[]{};:',./\|";
-    $numbers = "0123456789";
-
-    $password = $chars . $numbers . $charsUp . $symbol;
-
-    for ($i = 0; $i < $passwordLenght; $i++) {
-        $charIndex = rand(0, strlen($password) - 1);
-        echo $password[$charIndex];
-    }
-}
+$passwordLenght = isset($_GET["length"]) ? $_GET["length"] : '';
 
 ?>
 
@@ -72,7 +56,7 @@ function randomChar($passwordLenght)
                                 <h5 class="text-black">La password generata per te è:</h5>
                                 <p class="text-danger"> <?php randomChar($passwordLenght) ?> </p>
                             </div>
-                            <?php } ?>
+                        <?php } ?>
 
                     </h2>
                 </div>
